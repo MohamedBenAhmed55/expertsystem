@@ -170,6 +170,7 @@ diagnostic_personnalite_evitante(Patient) :-
     a_symptome(Patient, G19), a_symptome(Patient, G21), a_symptome(Patient, G60),
     diagnostic(Patient, 'Trouble de la Personnalité Évitante'),
     solution(Patient, 'Psychothérapie et thérapie de groupe').
+
 % Règle 13 : Diagnostic du Trouble de la Personnalité Dépendante
 diagnostic_personnalite_dependante(Patient) :-
     a_symptome(Patient, G24), a_symptome(Patient, G30), a_symptome(Patient, G42),
@@ -187,6 +188,7 @@ diagnostic_controle_impulsions(Patient) :-
     a_symptome(Patient, G05), a_symptome(Patient, G35), a_symptome(Patient, G68),
     diagnostic(Patient, 'Trouble du Contrôle des Impulsions'),
     solution(Patient, 'Thérapie comportementale et gestion des impulsions').
+
 % Règle 16 : Diagnostic du Trouble de la Personnalité Narcissique
 diagnostic_personnalite_narcissique(Patient) :-
     a_symptome(Patient, G26), a_symptome(Patient, G31), a_symptome(Patient, G62),
@@ -204,6 +206,7 @@ diagnostic_opposition_defiant(Patient) :-
     a_symptome(Patient, G07), a_symptome(Patient, G11), a_symptome(Patient, G28),
     diagnostic(Patient, 'Trouble de l'Opposition Défiant'),
     solution(Patient, 'Thérapie familiale et gestion de la colère').
+
 % Règle 19 : Diagnostic du Trouble de l'Énurésie
 diagnostic_enuresie(Patient) :-
     a_symptome(Patient, G09), a_symptome(Patient, G52), a_symptome(Patient, G69),
@@ -221,6 +224,7 @@ diagnostic_personnalite_paranoïaque(Patient) :-
     a_symptome(Patient, G17), a_symptome(Patient, G22), a_symptome(Patient, G52),
     diagnostic(Patient, 'Trouble de la Personnalité Paranoïaque'),
     solution(Patient, 'Psychothérapie et conseil psychologique').
+
 % Règle 22 : Diagnostic du Trouble de la Personnalité Évitante
 diagnostic_personnalite_evitante(Patient) :-
     a_symptome(Patient, G19), a_symptome(Patient, G21), a_symptome(Patient, G60),
