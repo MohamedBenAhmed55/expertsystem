@@ -293,17 +293,5 @@ diagnostiquer(Patient, Diagnostic, Solution) :-
     Diagnostic = 'Ansietas Cemas',
     Solution = 'Psychothérapie par analyse cognitivo-comportementale (CBT)'.
 
-% Règles de diagnostic
-diagnostic_anxiete(Patient) :-
-    a_symptome(Patient, G09), a_symptome(Patient, G15), a_symptome(Patient, G36), a_symptome(Patient, G37),
-    a_symptome(Patient, G40), a_symptome(Patient, G49), a_symptome(Patient, G61),
-    diagnostic(P01, 'Ansietas Cemas'),
-    solution(T02, 'Psychothérapie par analyse cognitivo-comportementale (CBT)').
-
-diagnostic_depression(Patient) :-
-    a_symptome(Patient, G06), a_symptome(Patient, G08), a_symptome(Patient, G29), a_symptome(Patient, G34),
-    diagnostic(P05, 'Depresi'),
-    solution(T03, 'Psychothérapie individuelle').
-
 % Exemple d'utilisation :
 ?- diagnostiquer(patient123, Diagnostic, Solution).
