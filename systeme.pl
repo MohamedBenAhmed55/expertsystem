@@ -99,172 +99,181 @@ solution(T09, 'Thérapie sportive').
 solution(T10, 'Thérapie cognitivo-comportementale').
 
 % Règles de diagnostic
-% Règle 1 : Diagnostic de l'Anorexie Nervosa
-diagnostic(Patient, 'Anorexia Nervosa') :-
-    a_symptome(Patient, G06),
-    a_symptome(Patient, G32),
-    a_symptome(Patient, G34),
-    a_symptome(Patient, G58).
+% Règle 1 : Diagnostic de la Dépression
+diagnostic_depression(Patient) :-
+    a_symptome(Patient, G06), a_symptome(Patient, G08), a_symptome(Patient, G29), a_symptome(Patient, G34),
+    diagnostic(Patient, 'Depresi'),
+    solution(Patient, 'Psychothérapie individuelle').
 
-% Règle 2 : Diagnostic de l'Anxiété
-diagnostic(Patient, 'Ansietas Cemas') :-
-    a_symptome(Patient, G15),
-    a_symptome(Patient, G36),
-    a_symptome(Patient, G37),
-    a_symptome(Patient, G40),
-    a_symptome(Patient, G49),
-    a_symptome(Patient, G61).
+% Règle 2 : Diagnostic du Trouble de Stress Post-Traumatique
+diagnostic_stress_post_traumatique(Patient) :-
+    a_symptome(Patient, G01), a_symptome(Patient, G03), a_symptome(Patient, G09),
+    diagnostic(Patient, 'Trouble de Stress Post-Traumatique'),
+    solution(Patient, 'Psychothérapie et médicaments').
 
-% Règle 3 : Diagnostic de la Dépression
-diagnostic(Patient, 'Depresi') :-
-    a_symptome(Patient, G08),
-    a_symptome(Patient, G23),
-    a_symptome(Patient, G72).
+% Règle 3 : Diagnostic de la Dépendance à la Drogue
+diagnostic_dependance_drogue(Patient) :-
+    a_symptome(Patient, G62), a_symptome(Patient, G68),
+    diagnostic(Patient, 'Dépendance à la Drogue'),
+    solution(Patient, 'Programme de réhabilitation pour la drogue').
 
-% Règle 4 : Diagnostic du Trouble Bipolaire
-diagnostic(Patient, 'Bipolar Disorder') :-
-    a_symptome(Patient, G02),
-    a_symptome(Patient, G25).
+% Règle 4 : Diagnostic du Trouble de la Personnalité Antisociale
+diagnostic_personnalite_antisociale(Patient) :-
+    a_symptome(Patient, G04), a_symptome(Patient, G11), a_symptome(Patient, G68),
+    diagnostic(Patient, 'Trouble de la Personnalité Antisociale'),
+    solution(Patient, 'Psychothérapie et réhabilitation').
 
-% Règle 5 : Diagnostic de l'Hypochondrie
-diagnostic(Patient, 'Hipokondria') :-
-    a_symptome(Patient, G64),
-    a_symptome(Patient, G10).
+% Règle 5 : Diagnostic du Trouble de la Personnalité Limite
+diagnostic_personnalite_limite(Patient) :-
+    a_symptome(Patient, G23), a_symptome(Patient, G61), a_symptome(Patient, G64),
+    diagnostic(Patient, 'Trouble de la Personnalité Limite'),
+    solution(Patient, 'Thérapie dialectique comportementale (DBT)').
 
-% Règle 6 : Diagnostic de l'Hystérie
-diagnostic(Patient, 'Hysteria') :-
-    a_symptome(Patient, G44),
-    a_symptome(Patient, G22).
+% Règle 6 : Diagnostic de la Dépendance aux Jeux de Hasard
+diagnostic_dependance_jeux_hasard(Patient) :-
+    a_symptome(Patient, G37), a_symptome(Patient, G40), a_symptome(Patient, G65),
+    diagnostic(Patient, 'Dépendance aux Jeux de Hasard'),
+    solution(Patient, 'Conseils et groupes de soutien').
 
-% Règle 7 : Diagnostic du Trouble de la Personnalité Multiple
-diagnostic(Patient, 'Multiple personality') :-
-    a_symptome(Patient, G54),
-    a_symptome(Patient, G59).
+% Règle 7 : Diagnostic du Trouble de la Personnalité Paranoïaque
+diagnostic_personnalite_paranoïaque(Patient) :-
+    a_symptome(Patient, G17), a_symptome(Patient, G22), a_symptome(Patient, G52),
+    diagnostic(Patient, 'Trouble de la Personnalité Paranoïaque'),
+    solution(Patient, 'Thérapie et conseil psychologique').
 
-% Règle 8 : Diagnostic de la Phobie
-diagnostic(Patient, 'Fobia') :-
-    a_symptome(Patient, G28),
-    a_symptome(Patient, G49).
+% Règle 8 : Diagnostic du Trouble de l'Anxiété Généralisée (TAG)
+diagnostic_anxiete_generalisee(Patient) :-
+    a_symptome(Patient, G15), a_symptome(Patient, G33), a_symptome(Patient, G37),
+    diagnostic(Patient, 'Trouble de l'Anxiété Généralisée'),
+    solution(Patient, 'Thérapie cognitivo-comportementale (CBT)').
 
-% Règle 9 : Diagnostic du Trouble de Conversion
-diagnostic(Patient, 'Conversion Disorder') :-
-    a_symptome(Patient, G07),
-    a_symptome(Patient, G56).
+% Règle 9 : Diagnostic du Trouble de l'Émétophobie
+diagnostic_emetophobie(Patient) :-
+    a_symptome(Patient, G28), a_symptome(Patient, G44), a_symptome(Patient, G61),
+    diagnostic(Patient, 'Émétophobie'),
+    solution(Patient, 'Thérapie d'exposition').
 
-% Règle 10 : Diagnostic du Trouble de Conversion
-diagnostic(Patient, 'Conversion Disorder') :-
-    a_symptome(Patient, G04),
-    a_symptome(Patient, G17).
+% Règle 10 : Diagnostic du Trouble de Stress Aigu
+diagnostic_stress_aigu(Patient) :-
+    a_symptome(Patient, G26), a_symptome(Patient, G51), a_symptome(Patient, G73),
+    diagnostic(Patient, 'Trouble du Stress Aigu'),
+    solution(Patient, 'Intervention en situation de crise et psychothérapie').
 
-% Règle 11 : Diagnostic de la Dépression
-diagnostic(Patient, 'Depresi') :-
-    a_symptome(Patient, G29),
-    a_symptome(Patient, G23).
+% Règle 11 : Diagnostic du Trouble de la Personnalité Schizoïde
+diagnostic_personnalite_schizoide(Patient) :-
+    a_symptome(Patient, G11), a_symptome(Patient, G16), a_symptome(Patient, G39),
+    diagnostic(Patient, 'Trouble de la Personnalité Schizoïde'),
+    solution(Patient, 'Psychothérapie et soutien social').
 
-% Règle 12 : Diagnostic de la Schizophrénie
-diagnostic(Patient, 'Schizophrenia') :-
-    a_symptome(Patient, G13),
-    a_symptome(Patient, G28).
+% Règle 12 : Diagnostic du Trouble de la Personnalité Évitante
+diagnostic_personnalite_evitante(Patient) :-
+    a_symptome(Patient, G19), a_symptome(Patient, G21), a_symptome(Patient, G60),
+    diagnostic(Patient, 'Trouble de la Personnalité Évitante'),
+    solution(Patient, 'Psychothérapie et thérapie de groupe').
+% Règle 13 : Diagnostic du Trouble de la Personnalité Dépendante
+diagnostic_personnalite_dependante(Patient) :-
+    a_symptome(Patient, G24), a_symptome(Patient, G30), a_symptome(Patient, G42),
+    diagnostic(Patient, 'Trouble de la Personnalité Dépendante'),
+    solution(Patient, 'Psychothérapie et renforcement de la confiance en soi').
 
-% Règle 13 : Diagnostic du Trouble Obsessionnel Compulsif (TOC)
-diagnostic(Patient, 'Trouble Obsessionnel Compulsif') :-
-    a_symptome(Patient, G12),
-    a_symptome(Patient, G48).
+% Règle 14 : Diagnostic du Trouble de la Personnalité Obsessionnelle-Compulsive
+diagnostic_personnalite_obsessionnelle_compulsive(Patient) :-
+    a_symptome(Patient, G12), a_symptome(Patient, G16), a_symptome(Patient, G48),
+    diagnostic(Patient, 'Trouble de la Personnalité Obsessionnelle-Compulsive'),
+    solution(Patient, 'Thérapie comportementale et cognitive (TCC)').
 
-% Règle 14 : Diagnostic de la Paranoïa
-diagnostic(Patient, 'Paranoia') :-
-    a_symptome(Patient, G17),
-    a_symptome(Patient, G22).
+% Règle 15 : Diagnostic du Trouble du Contrôle des Impulsions
+diagnostic_controle_impulsions(Patient) :-
+    a_symptome(Patient, G05), a_symptome(Patient, G35), a_symptome(Patient, G68),
+    diagnostic(Patient, 'Trouble du Contrôle des Impulsions'),
+    solution(Patient, 'Thérapie comportementale et gestion des impulsions').
+% Règle 16 : Diagnostic du Trouble de la Personnalité Narcissique
+diagnostic_personnalite_narcissique(Patient) :-
+    a_symptome(Patient, G26), a_symptome(Patient, G31), a_symptome(Patient, G62),
+    diagnostic(Patient, 'Trouble de la Personnalité Narcissique'),
+    solution(Patient, 'Psychothérapie centrée sur la personne').
 
-% Règle 15 : Diagnostic de la Dépendance Émotionnelle
-diagnostic(Patient, 'Dépendance Émotionnelle') :-
-    a_symptome(Patient, G59),
-    a_symptome(Patient, G60).
+% Règle 17 : Diagnostic du Trouble de l'Énurésie
+diagnostic_enuresie(Patient) :-
+    a_symptome(Patient, G09), a_symptome(Patient, G52), a_symptome(Patient, G69),
+    diagnostic(Patient, 'Trouble de l'Énurésie'),
+    solution(Patient, 'Thérapie comportementale et rééducation de la vessie').
 
-% Règle 16 : Diagnostic du Trouble de Stress Post-Traumatique
-diagnostic(Patient, 'Trouble de Stress Post-Traumatique') :-
-    a_symptome(Patient, G01),
-    a_symptome(Patient, G03),
-    a_symptome(Patient, G09).
+% Règle 18 : Diagnostic du Trouble de l'Opposition Défiant
+diagnostic_opposition_defiant(Patient) :-
+    a_symptome(Patient, G07), a_symptome(Patient, G11), a_symptome(Patient, G28),
+    diagnostic(Patient, 'Trouble de l'Opposition Défiant'),
+    solution(Patient, 'Thérapie familiale et gestion de la colère').
+% Règle 19 : Diagnostic du Trouble de l'Énurésie
+diagnostic_enuresie(Patient) :-
+    a_symptome(Patient, G09), a_symptome(Patient, G52), a_symptome(Patient, G69),
+    diagnostic(Patient, 'Trouble de l\'Énurésie'),
+    solution(Patient, 'Thérapie comportementale et rééducation de la vessie').
 
-% Règle 17 : Diagnostic de la Dépendance à la Drogue
-diagnostic(Patient, 'Dépendance à la Drogue') :-
-    a_symptome(Patient, G62),
-    a_symptome(Patient, G68).
+% Règle 20 : Diagnostic du Trouble de l'Opposition Défiant
+diagnostic_opposition_defiant(Patient) :-
+    a_symptome(Patient, G07), a_symptome(Patient, G11), a_symptome(Patient, G28),
+    diagnostic(Patient, 'Trouble de l\'Opposition Défiant'),
+    solution(Patient, 'Thérapie familiale et gestion de la colère').
 
-% Règle 18 : Diagnostic de la Dépendance à l'Alcool
-diagnostic(Patient, 'Dépendance à l'Alcool') :-
-    a_symptome(Patient, G64),
-    a_symptome(Patient, G71).
+% Règle 21 : Diagnostic du Trouble de la Personnalité Paranoïaque
+diagnostic_personnalite_paranoïaque(Patient) :-
+    a_symptome(Patient, G17), a_symptome(Patient, G22), a_symptome(Patient, G52),
+    diagnostic(Patient, 'Trouble de la Personnalité Paranoïaque'),
+    solution(Patient, 'Psychothérapie et conseil psychologique').
+% Règle 22 : Diagnostic du Trouble de la Personnalité Évitante
+diagnostic_personnalite_evitante(Patient) :-
+    a_symptome(Patient, G19), a_symptome(Patient, G21), a_symptome(Patient, G60),
+    diagnostic(Patient, 'Trouble de la Personnalité Évitante'),
+    solution(Patient, 'Psychothérapie et thérapie de groupe').
 
-% Règle 19 : Diagnostic de la Phobie Sociale
-diagnostic(Patient, 'Phobie Sociale') :-
-    a_symptome(Patient, G10),
-    a_symptome(Patient, G32),
-    a_symptome(Patient, G48).
+% Règle 23 : Diagnostic du Trouble de la Personnalité Dépendante
+diagnostic_personnalite_dependante(Patient) :-
+    a_symptome(Patient, G24), a_symptome(Patient, G30), a_symptome(Patient, G42),
+    diagnostic(Patient, 'Trouble de la Personnalité Dépendante'),
+    solution(Patient, 'Psychothérapie et renforcement de la confiance en soi').
 
-% Règle 20 : Diagnostic de l'Épisode Dépressif Majeur
-diagnostic(Patient, 'Épisode Dépressif Majeur') :-
-    a_symptome(Patient, G64),
-    a_symptome(Patient, G07),
-    a_symptome(Patient, G28).
+% Règle 24 : Diagnostic du Trouble de la Personnalité Obsessionnelle-Compulsive
+diagnostic_personnalite_obsessionnelle_compulsive(Patient) :-
+    a_symptome(Patient, G12), a_symptome(Patient, G16), a_symptome(Patient, G48),
+    diagnostic(Patient, 'Trouble de la Personnalité Obsessionnelle-Compulsive'),
+    solution(Patient, 'Thérapie comportementale et cognitive (TCC)').
+% Règle 25 : Diagnostic du Trouble de la Personnalité Narcissique
+diagnostic_personnalite_narcissique(Patient) :-
+    a_symptome(Patient, G26), a_symptome(Patient, G31), a_symptome(Patient, G62),
+    diagnostic(Patient, 'Trouble de la Personnalité Narcissique'),
+    solution(Patient, 'Psychothérapie centrée sur la personne').
 
-% Règle 21 : Diagnostic du Trouble de l'Alimentation Sélective
-diagnostic(Patient, 'Trouble de l'Alimentation Sélective') :-
-    a_symptome(Patient, G06),
-    a_symptome(Patient, G14),
-    a_symptome(Patient, G45).
-% Règle 22 : Diagnostic de la Schizophrénie Paranoïde
-diagnostic(Patient, 'Schizophrénie Paranoïde') :-
-    a_symptome(Patient, G17),
-    a_symptome(Patient, G28),
-    a_symptome(Patient, G52).
+% Règle 26 : Diagnostic du Trouble de l'Émétophobie
+diagnostic_emetophobie(Patient) :-
+    a_symptome(Patient, G28), a_symptome(Patient, G44), a_symptome(Patient, G61),
+    diagnostic(Patient, 'Émétophobie'),
+    solution(Patient, 'Thérapie d'exposition').
 
-% Règle 23 : Diagnostic du Trouble de l'Anxiété Généralisée (TAG)
-diagnostic(Patient, 'Trouble de l'Anxiété Généralisée') :-
-    a_symptome(Patient, G15),
-    a_symptome(Patient, G33),
-    a_symptome(Patient, G37).
+% Règle 27 : Diagnostic du Trouble de l'Alimentation Sélective
+diagnostic_alimentation_selective(Patient) :-
+    a_symptome(Patient, G06), a_symptome(Patient, G32), a_symptome(Patient, G56),
+    diagnostic(Patient, 'Trouble de l'Alimentation Sélective'),
+    solution(Patient, 'Conseils nutritionnels et thérapie').
 
-% Règle 24 : Diagnostic de la Boulimie Nerveuse
-diagnostic(Patient, 'Boulimie Nerveuse') :-
-    a_symptome(Patient, G06),
-    a_symptome(Patient, G55),
-    a_symptome(Patient, G72).
-% Règle 25 : Diagnostic du Trouble de l'Émétophobie
-diagnostic(Patient, 'Émétophobie') :-
-    a_symptome(Patient, G28),
-    a_symptome(Patient, G44),
-    a_symptome(Patient, G61).
+% Règle 28 : Diagnostic du Trouble de la Personnalité Histrionique
+diagnostic_personnalite_histrionique(Patient) :-
+    a_symptome(Patient, G11), a_symptome(Patient, G29), a_symptome(Patient, G52),
+    diagnostic(Patient, 'Trouble de la Personnalité Histrionique'),
+    solution(Patient, 'Psychothérapie et expression émotionnelle').
 
-% Règle 26 : Diagnostic de la Dépression Majeure
-diagnostic(Patient, 'Dépression Majeure') :-
-    a_symptome(Patient, G09),
-    a_symptome(Patient, G24),
-    a_symptome(Patient, G36).
+% Règle 29 : Diagnostic du Trouble du Contrôle des Impulsions
+diagnostic_controle_impulsions(Patient) :-
+    a_symptome(Patient, G05), a_symptome(Patient, G35), a_symptome(Patient, G68),
+    diagnostic(Patient, 'Trouble du Contrôle des Impulsions'),
+    solution(Patient, 'Thérapie comportementale et gestion des impulsions').
 
-% Règle 27 : Diagnostic du Trouble du Stress Aigu
-diagnostic(Patient, 'Trouble du Stress Aigu') :-
-    a_symptome(Patient, G26),
-    a_symptome(Patient, G51),
-    a_symptome(Patient, G73).
-% Règle 28 : Diagnostic du Trouble de la Personnalité Antisociale
-diagnostic(Patient, 'Trouble de la Personnalité Antisociale') :-
-    a_symptome(Patient, G04),
-    a_symptome(Patient, G11),
-    a_symptome(Patient, G68).
+% Règle 30 : Diagnostic du Trouble de l'Énurésie
+diagnostic_enuresie(Patient) :-
+    a_symptome(Patient, G09), a_symptome(Patient, G52), a_symptome(Patient, G69),
+    diagnostic(Patient, 'Trouble de l\'Énurésie'),
+    solution(Patient, 'Thérapie comportementale et rééducation de la vessie').
 
-% Règle 29 : Diagnostic du Trouble de la Personnalité Limite
-diagnostic(Patient, 'Trouble de la Personnalité Limite') :-
-    a_symptome(Patient, G23),
-    a_symptome(Patient, G61),
-    a_symptome(Patient, G64).
-
-% Règle 30 : Diagnostic de la Dépendance aux Jeux de Hasard
-diagnostic(Patient, 'Dépendance aux Jeux de Hasard') :-
-    a_symptome(Patient, G37),
-    a_symptome(Patient, G40),
-    a_symptome(Patient, G65).
 
 
 
@@ -283,6 +292,18 @@ diagnostiquer(Patient, Diagnostic, Solution) :-
     diagnostic_anxiete(Patient),
     Diagnostic = 'Ansietas Cemas',
     Solution = 'Psychothérapie par analyse cognitivo-comportementale (CBT)'.
+
+% Règles de diagnostic
+diagnostic_anxiete(Patient) :-
+    a_symptome(Patient, G09), a_symptome(Patient, G15), a_symptome(Patient, G36), a_symptome(Patient, G37),
+    a_symptome(Patient, G40), a_symptome(Patient, G49), a_symptome(Patient, G61),
+    diagnostic(P01, 'Ansietas Cemas'),
+    solution(T02, 'Psychothérapie par analyse cognitivo-comportementale (CBT)').
+
+diagnostic_depression(Patient) :-
+    a_symptome(Patient, G06), a_symptome(Patient, G08), a_symptome(Patient, G29), a_symptome(Patient, G34),
+    diagnostic(P05, 'Depresi'),
+    solution(T03, 'Psychothérapie individuelle').
 
 % Exemple d'utilisation :
 ?- diagnostiquer(patient123, Diagnostic, Solution).
