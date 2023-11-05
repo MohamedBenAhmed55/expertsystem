@@ -3,76 +3,77 @@ symptome(G01, 'Parle moins fluidement').
 symptome(G02, 'Rigide et inflexible').
 symptome(G03, 'Égoïste').
 symptome(G04, 'Perturbation émotionnelle instable').
-symptome(G05, 'Respiratory disturbances, shortness of breath').
-symptome(G06, 'Diet disorders').
-symptome(G07, 'Mindset disorder').
-symptome(G08, 'Insomnia').
-symptome(G09, 'Want to kill yourself').
-symptome(G10, 'Loss of memory').
-symptome(G11, 'Antisocial').
-symptome(G12, 'Doing a job/activity over and over again').
-symptome(G13, 'Experiencing convulsions').
-symptome(G14, 'Maintain excessive hygiene').
+symptome(G05, 'Troubles respiratoires, essoufflement').
+symptome(G06, 'Troubles alimentaires').
+symptome(G07, 'Troubles de l\'état d\'esprit').
+symptome(G08, 'Insomnie').
+symptome(G09, 'Envie de se suicider').
+symptome(G10, 'Perte de mémoire').
+symptome(G11, 'Comportement antisocial').
+symptome(G12, 'Répétition compulsive de tâches').
+symptome(G13, 'Expérience de convulsions').
+symptome(G14, 'Maintien d\'une hygiène excessive').
 symptome(G15, 'Indigestion').
-symptome(G16, 'Feeling heavy on the limbs').
-symptome(G17, 'Excessive suspicion').
-symptome(G18, 'Feeling low self-esteem').
-symptome(G19, 'Feeling worried about excessive disease').
-symptome(G20, 'Feeling weak and tired easily').
-symptome(G21, 'Feeling suffering from a severe illness').
-symptome(G22, 'Feeling body parts pain').
-symptome(G23, 'Feeling hopeless').
-symptome(G24, 'Feel very sinful').
-symptome(G25, 'Feeling very guilty / very afraid to make mistakes').
-symptome(G26, 'Feel very excited').
-symptome(G27, 'Feel very smart in a particular field').
-symptome(G28, 'Feel very afraid of certain objects/conditions').
-symptome(G29, 'Excessive sadness').
-symptome(G30, 'Feel happy after pulling hair').
-symptome(G31, 'Feel happy to grab an eye-catching object').
-symptome(G32, 'Fear of excessive').
-symptome(G33, 'Fearing excessive dirty').
-symptome(G34, 'Feeling not confident').
-symptome(G35, 'Feeling never guilty').
-symptome(G36, 'Easy to sweat cold').
-symptome(G37, 'Easy to panic').
-symptome(G38, 'Easily offended').
-symptome(G39, 'Underwent traumatic / violent').
-symptome(G40, 'Feeling stressed for one thing').
-symptome(G41, 'Always think badly').
-symptome(G42, 'Nice to quarrel, hostile and often screwed up').
-symptome(G43, 'Nice to interfere in other people's business').
-symptome(G44, 'Often lie').
-symptome(G45, 'Often counts in the mind').
-symptome(G46, 'Often thinking is unrealistic').
-symptome(G47, 'often being attentive').
-symptome(G48, 'Frequent delusions').
-symptome(G49, 'Often shaking').
-symptome(G50, 'Frequent hallucinations').
-symptome(G51, 'Often angry / irritable').
-symptome(G52, 'Often check the body for mild problems').
-symptome(G53, 'Often crying hysterically').
-symptome(G54, 'Often pull hair until it fall out').
-symptome(G55, 'Often experience of loss of physical function, suddenly paralyzed, feeling deaf, blind, numb but only briefly').
-symptome(G56, 'Often have severe cramps').
-symptome(G57, 'Often experience significant mood swings, very happy to be very sad / vice versa').
-symptome(G58, 'Often experience pain / health problems').
-symptome(G59, 'Often hurt yourself').
-symptome(G60, 'Often feel neglected and inattentive').
-symptome(G61, 'Often feel uneasy').
-symptome(G62, 'Often feel anxious, restless and daydreaming').
-symptome(G63, 'Often feel heart palpitations').
-symptome(G64, 'Often feel headache').
-symptome(G65, 'Often happy, excessively cheerful').
-symptome(G66, 'Often feel tense and anxious').
-symptome(G67, 'Often feel depressed with the circumstances').
-symptome(G68, 'lost consciousness').
-symptome(G69, 'impatient').
-symptome(G70, 'difficult to speak normally').
-symptome(G71, 'Difficult concentration and decreased memory').
-symptome(G72, 'Unable to adjust / difficult to adjust').
-symptome(G73, 'Do not have a sense of humor').
-symptome(G74, 'Never fear').
+symptome(G16, 'Sensation de lourdeur dans les membres').
+symptome(G17, 'Soupçons excessifs').
+symptome(G18, 'Estime de soi basse').
+symptome(G19, 'Inquiétude excessive concernant la maladie').
+symptome(G20, 'Sensation de faiblesse et de fatigue facile').
+symptome(G21, 'Sensation de souffrir d\'une maladie grave').
+symptome(G22, 'Douleurs dans certaines parties du corps').
+symptome(G23, 'Sentiment de désespoir').
+symptome(G24, 'Sentiment de culpabilité intense').
+symptome(G25, 'Sentiment de culpabilité intense / très peur de faire des erreurs').
+symptome(G26, 'Sensation d\'excitation excessive').
+symptome(G27, 'Sentiment de grande intelligence dans un domaine particulier').
+symptome(G28, 'Peur excessive de certains objets/conditions').
+symptome(G29, 'Tristesse excessive').
+symptome(G30, 'Sensation de bonheur après s\'être arraché les cheveux').
+symptome(G31, 'Sensation de bonheur en saisissant un objet accrocheur').
+symptome(G32, 'Peur excessive').
+symptome(G33, 'Peur excessive de la saleté').
+symptome(G34, 'Sentiment de manque de confiance en soi').
+symptome(G35, 'Jamais de sentiment de culpabilité').
+symptome(G36, 'Transpiration froide facile').
+symptome(G37, 'Facilité à paniquer').
+symptome(G38, 'Facilement offensé').
+symptome(G39, 'Exposition à des traumatismes/violences').
+symptome(G40, 'Stress excessif pour une chose').
+symptome(G41, 'Penser toujours négativement').
+symptome(G42, 'Enclin à se disputer, hostile et souvent perturbé').
+symptome(G43, 'Tendance à s\'immiscer dans les affaires des autres').
+symptome(G44, 'Mensonges fréquents').
+symptome(G45, 'Compte fréquemment mentalement').
+symptome(G46, 'Penser fréquemment de manière irréaliste').
+symptome(G47, 'Souvent très attentif').
+symptome(G48, 'Hallucinations fréquentes').
+symptome(G49, 'Tremblements fréquents').
+symptome(G50, 'Hallucinations fréquentes').
+symptome(G51, 'Colère/frustration fréquentes').
+symptome(G52, 'Vérification fréquente du corps pour de légers problèmes').
+symptome(G53, 'Cris fréquents et incontrôlables').
+symptome(G54, 'Tirer fréquemment les cheveux jusqu\'à leur chute').
+symptome(G55, 'Expérience fréquente de perte de fonction physique, paralysie soudaine, sentiment de surdité, cécité, engourdissement mais seulement brièvement').
+symptome(G56, 'Crampes sévères fréquentes').
+symptome(G57, 'Expérience fréquente de sautes d\'humeur significatives, de très heureux à très triste / vice versa').
+symptome(G58, 'Douleurs/fréquentes problèmes de santé').
+symptome(G59, 'Se faire du mal fréquemment').
+symptome(G60, 'Sentiment fréquent d\'être négligé et inattentif').
+symptome(G61, 'Sentiment fréquent d\'inquiétude').
+symptome(G62, 'Sentiment fréquent d \'anxiété, d\'agitation et de rêverie').
+symptome(G63, 'Palpitations cardiaques fréquentes').
+symptome(G64, 'Céphalées fréquentes').
+symptome(G65, 'Sentiment de bonheur fréquent, excessivement joyeux').
+symptome(G66, 'Sentiment fréquent de tension et d\'anxiété').
+symptome(G67, 'Sentiment fréquent de dépression face aux circonstances').
+symptome(G68, 'Perte de connaissance fréquente').
+symptome(G69, 'Impatience fréquente').
+symptome(G70, 'Difficulté à parler normalement').
+symptome(G71, 'Difficulté de concentration et mémoire réduite').
+symptome(G72, 'Incapacité à s\'adapter/difficulté à s\'adapter').
+symptome(G73, 'Absence d\'humour').
+symptome(G74, 'Jamais peur').
+
 
 % Faits : Diagnostics
 diagnostic(P01, 'Ansietas Cemas').
@@ -198,13 +199,13 @@ diagnostic_personnalite_narcissique(Patient) :-
 % Règle 17 : Diagnostic du Trouble de l'Énurésie
 diagnostic_enuresie(Patient) :-
     a_symptome(Patient, G09), a_symptome(Patient, G52), a_symptome(Patient, G69),
-    diagnostic(Patient, 'Trouble de l'Énurésie'),
+    diagnostic(Patient, 'Trouble de l\'Énurésie'),
     solution(Patient, 'Thérapie comportementale et rééducation de la vessie').
 
 % Règle 18 : Diagnostic du Trouble de l'Opposition Défiant
 diagnostic_opposition_defiant(Patient) :-
     a_symptome(Patient, G07), a_symptome(Patient, G11), a_symptome(Patient, G28),
-    diagnostic(Patient, 'Trouble de l'Opposition Défiant'),
+    diagnostic(Patient, 'Trouble de l\'Opposition Défiant'),
     solution(Patient, 'Thérapie familiale et gestion de la colère').
 
 % Règle 19 : Diagnostic du Trouble de l'Énurésie
@@ -277,9 +278,6 @@ diagnostic_enuresie(Patient) :-
     a_symptome(Patient, G09), a_symptome(Patient, G52), a_symptome(Patient, G69),
     diagnostic(Patient, 'Trouble de l\'Énurésie'),
     solution(Patient, 'Thérapie comportementale et rééducation de la vessie').
-
-
-
 
 % Règles d'association de symptômes avec un patient
 a_symptome(Patient, Symptome) :- patient_symptome(Patient, Symptome).
