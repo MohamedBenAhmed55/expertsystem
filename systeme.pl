@@ -145,14 +145,14 @@ diagnostic_personnalite_paranoïaque(Patient) :-
 % Règle 8 : Diagnostic du Trouble de l'Anxiété Généralisée (TAG)
 diagnostic_anxiete_generalisee(Patient) :-
     a_symptome(Patient, G15), a_symptome(Patient, G33), a_symptome(Patient, G37),
-    diagnostic(Patient, 'Trouble de l'Anxiété Généralisée'),
+    diagnostic(Patient, 'Trouble de l\'Anxiété Généralisée'),
     solution(Patient, 'Thérapie cognitivo-comportementale (CBT)').
 
 % Règle 9 : Diagnostic du Trouble de l'Émétophobie
 diagnostic_emetophobie(Patient) :-
     a_symptome(Patient, G28), a_symptome(Patient, G44), a_symptome(Patient, G61),
     diagnostic(Patient, 'Émétophobie'),
-    solution(Patient, 'Thérapie d'exposition').
+    solution(Patient, 'Thérapie d\'exposition').
 
 % Règle 10 : Diagnostic du Trouble de Stress Aigu
 diagnostic_stress_aigu(Patient) :-
@@ -253,12 +253,12 @@ diagnostic_personnalite_narcissique(Patient) :-
 diagnostic_emetophobie(Patient) :-
     a_symptome(Patient, G28), a_symptome(Patient, G44), a_symptome(Patient, G61),
     diagnostic(Patient, 'Émétophobie'),
-    solution(Patient, 'Thérapie d'exposition').
+    solution(Patient, 'Thérapie d\'exposition').
 
 % Règle 27 : Diagnostic du Trouble de l'Alimentation Sélective
 diagnostic_alimentation_selective(Patient) :-
     a_symptome(Patient, G06), a_symptome(Patient, G32), a_symptome(Patient, G56),
-    diagnostic(Patient, 'Trouble de l'Alimentation Sélective'),
+    diagnostic(Patient, 'Trouble de l\'Alimentation Sélective'),
     solution(Patient, 'Conseils nutritionnels et thérapie').
 
 % Règle 28 : Diagnostic du Trouble de la Personnalité Histrionique
