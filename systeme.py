@@ -142,6 +142,30 @@ regles = {
     'Trouble de la Personnalité Histrionique': ['G11', 'G29', 'G52'],
 }
 
+# Correspondance
+correspondances = {
+    'Dépression': 'Psychothérapie individuelle',
+    'Trouble de Stress Post-Traumatique': 'Psychothérapie par analyse cognitivo-comportementale (CBT)',
+    'Dépendance à la Drogue': 'Thérapie sportive',
+    'Trouble de la Personnalité Antisociale': 'Hospitalisation',
+    'Trouble de la Personnalité Limite': 'Psychothérapie environnementale',
+    'Dépendance aux Jeux de Hasard': 'Thérapie cognitivo-comportementale',
+    'Trouble de la Personnalité Paranoïaque': 'Psychothérapie de groupe',
+    'Trouble de l\'Anxiété Généralisée (TAG)': 'Psychothérapie de soutien',
+    'Émétophobie': 'Formation à la relaxation',
+    'Trouble de Stress Aigu': 'Technique PHBS',
+    'Trouble de la Personnalité Schizoïde': 'Hospitalisation',
+    'Trouble de la Personnalité Évitante': 'Psychothérapie individuelle',
+    'Trouble de la Personnalité Dépendante': 'Psychothérapie par analyse cognitivo-comportementale (CBT)',
+    'Trouble de la Personnalité Obsessionnelle-Compulsive': 'Psychothérapie environnementale',
+    'Trouble du Contrôle des Impulsions': 'Thérapie sportive',
+    'Trouble de la Personnalité Narcissique': 'Psychothérapie environnementale',
+    'Trouble de l\'Énurésie': 'Thérapie cognitivo-comportementale',
+    'Trouble de l\'Opposition Défiant': 'Psychothérapie de soutien',
+    'Trouble de l\'Alimentation Sélective': 'Formation à la relaxation',
+    'Trouble de la Personnalité Histrionique': 'Technique PHBS',
+}
+
 
 # Fonction de diagnostic
 def diagnostiquer_patient(symptomes_patient):
@@ -151,13 +175,30 @@ def diagnostiquer_patient(symptomes_patient):
     return "Aucun diagnostic trouvé"
 
 # Fonction pour obtenir la solution en fonction du diagnostic
+# def obtenir_solution(diagnostic):
+#     solutions = {
+#         'P01': 'Hospitalisation',
+#         'P02': 'Psychothérapie par analyse cognitivo-comportementale (CBT)',
+#         'P03': 'Psychothérapie individuelle',
+#         'P04': 'Psychothérapie de groupe',
+#         'P05': 'Psychothérapie environnementale',
+#         'P06': 'Psychothérapie de soutien',
+#         'P07': 'Formation à la relaxation',
+#         'P08': 'Technique PHBS',
+#         'P09': 'Thérapie sportive',
+#         'P10': 'Thérapie cognitivo-comportementale',
+#         # Ajoutez d'autres diagnostics et solutions ici
+#     }
+#     print(diagnostic)
+#     return solutions.get(diagnostic, solutions['P08'])
+
 def obtenir_solution(diagnostic):
-    return solutions.get(diagnostic, "Solution non définie")
+    return correspondances.get(diagnostic, correspondances[diagnostic])
 
 def main():
 
     # Symptômes du patient (vous pouvez personnaliser les symptômes ici)
-    symptomes_patient = ['G01', 'G03', 'G09', 'G10']
+    symptomes_patient = ['G15', 'G33', 'G37']
 
     # Diagnostic du patient
     diagnostic = diagnostiquer_patient(symptomes_patient)
