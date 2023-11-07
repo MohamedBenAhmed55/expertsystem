@@ -264,12 +264,16 @@ def diagnostiquer_patient(symptomes_patient):
     return "Aucun diagnostic trouvé"
 
 def chainer_avant(symptomes_existant, regles):
-    nouvelles_informations = set()
-    for regle, details in regles.items():
-        condition = details['condition']
-        conclusion = details['conclusion']
-        if all(symptome in symptomes_existant for symptome in condition):
-            nouvelles_informations.add(conclusion)
+    nouvelles_informations = set(symptomes_existant)
+    while True:
+        informations_precedentes = set(nouvelles_informations)
+        for regle, details in regles.items():
+            condition = details['condition']
+            conclusion = details['conclusion']
+            if all(symptome in nouvelles_informations for symptome in condition):
+                nouvelles_informations.add(conclusion)
+        if informations_precedentes == nouvelles_informations:
+            break
     return list(nouvelles_informations)
 
 # Fonction pour obtenir la solution en fonction du diagnostic
