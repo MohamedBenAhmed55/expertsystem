@@ -166,13 +166,111 @@ correspondances = {
     'Trouble de la Personnalité Histrionique': 'Technique PHBS',
 }
 
+# regles de chainage avant
+regles_chaînage_avant = {
+    'R01': {
+        'condition': ['G01', 'G03'],
+        'conclusion': 'G02'
+    },
+    'R02': {
+        'condition': ['G06', 'G08'],
+        'conclusion': 'G04'
+    },
+    'R03': {
+        'condition': ['G23', 'G61'],
+        'conclusion': 'G64'
+    },
+    'R04': {
+        'condition': ['G26', 'G51'],
+        'conclusion': 'G73'
+    },
+    'R05': {
+        'condition': ['G11', 'G29'],
+        'conclusion': 'G52'
+    },
+    'R06': {
+        'condition': ['G33', 'G49'],
+        'conclusion': 'G62'
+    },
+    'R07': {
+        'condition': ['G17', 'G22'],
+        'conclusion': 'G28'
+    },
+    'R08': {
+        'condition': ['G05', 'G35'],
+        'conclusion': 'G68'
+    },
+    'R09': {
+        'condition': ['G15', 'G37'],
+        'conclusion': 'G48'
+    },
+    'R10': {
+        'condition': ['G40', 'G65'],
+        'conclusion': 'G07'
+    },
+    'R11': {
+        'condition': ['G61', 'G64'],
+        'conclusion': 'G60'
+    },
+    'R12': {
+        'condition': ['G03', 'G15'],
+        'conclusion': 'G09'
+    },
+    'R13': {
+        'condition': ['G09', 'G52'],
+        'conclusion': 'G69'
+    },
+    'R14': {
+        'condition': ['G26', 'G51'],
+        'conclusion': 'G73'
+    },
+    'R15': {
+        'condition': ['G11', 'G29'],
+        'conclusion': 'G52'
+    },
+    'R16': {
+        'condition': ['G04', 'G37'],
+        'conclusion': 'G11'
+    },
+    'R17': {
+        'condition': ['G22', 'G35'],
+        'conclusion': 'G68'
+    },
+    'R18': {
+        'condition': ['G02', 'G08'],
+        'conclusion': 'G16'
+    },
+    'R19': {
+        'condition': ['G33', 'G49'],
+        'conclusion': 'G62'
+    },
+    'R20': {
+        'condition': ['G28', 'G51'],
+        'conclusion': 'G73'
+    }
+}
+
 
 # Fonction de diagnostic
 def diagnostiquer_patient(symptomes_patient):
+    # Appliquer le chaînage avant
+    for regle in regles_chaînage_avant.values():
+        if all(symptome in symptomes_patient for symptome in regle['condition']):
+            symptomes_patient.append(regle['conclusion'])
+
     for diagnostic, symptomes_requis in regles.items():
         if all(symptome in symptomes_patient for symptome in symptomes_requis):
             return diagnostic
     return "Aucun diagnostic trouvé"
+
+def chainer_avant(symptomes_existant, regles):
+    nouvelles_informations = set()
+    for regle, details in regles.items():
+        condition = details['condition']
+        conclusion = details['conclusion']
+        if all(symptome in symptomes_existant for symptome in condition):
+            nouvelles_informations.add(conclusion)
+    return list(nouvelles_informations)
 
 # Fonction pour obtenir la solution en fonction du diagnostic
 # def obtenir_solution(diagnostic):
@@ -196,6 +294,14 @@ def obtenir_solution(diagnostic):
     return correspondances.get(diagnostic, correspondances[diagnostic])
 
 def main():
+    symptomes_patient = ['G15', 'G33', 'G37']
+    nouvelles_informations = chainer_avant(symptomes_patient, regles_chaînage_avant)
+    symptomes_patient += nouvelles_informations
+    print(symptomes_patient)
+    diagnostic = diagnostiquer_patient(symptomes_patient)
+    print(diagnostic)
+    # solution = obtenir_solution(diagnostic)
+    # print("Solution proposée:", solution)
 
     # Symptômes du patient (vous pouvez personnaliser les symptômes ici)
     symptomes_patient = ['G15', 'G33', 'G37']
