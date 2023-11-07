@@ -304,19 +304,20 @@ def main():
     print(symptomes_patient)
     diagnostic = diagnostiquer_patient(symptomes_patient)
     print(diagnostic)
-    # solution = obtenir_solution(diagnostic)
-    # print("Solution proposée:", solution)
-
-    # Symptômes du patient (vous pouvez personnaliser les symptômes ici)
-    symptomes_patient = ['G15', 'G33', 'G37']
-
-    # Diagnostic du patient
-    diagnostic = diagnostiquer_patient(symptomes_patient)
     print("Diagnostic du patient:", diagnostic)
-
-    # Obtenir la solution en fonction du diagnostic
     solution = obtenir_solution(diagnostic)
     print("Solution proposée:", solution)
+
+    # # Symptômes du patient (vous pouvez personnaliser les symptômes ici)
+    # symptomes_patient = ['G15', 'G33', 'G37']
+    #
+    # # Diagnostic du patient
+    # diagnostic = diagnostiquer_patient(symptomes_patient)
+    # print("Diagnostic du patient:", diagnostic)
+    #
+    # # Obtenir la solution en fonction du diagnostic
+    # solution = obtenir_solution(diagnostic)
+    # print("Solution proposée:", solution)
 
 if __name__ == "__main__":
     main()
